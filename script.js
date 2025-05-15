@@ -149,3 +149,13 @@ addReveals(`
 
 
 });
+
+// Automatically close mobile nav when a link is clicked
+document.querySelectorAll('#nav-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    const nav = document.getElementById('nav-menu');
+    if (nav.classList.contains('active')) {
+      nav.classList.remove('active'); // Hide the mobile menu
+    }
+  });
+});
