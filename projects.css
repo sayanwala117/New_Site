@@ -32,7 +32,7 @@
     margin-bottom:6rem;
   }
   .project.reverse .project-image{ order:2; }
-  .project.reverse .project-content{ order:1; text-align:right; }
+  .project.reverse .project-content{ order:1; }
   
   .project-image img{
     width:100%; height:auto;

@@ -535,7 +535,7 @@ footer {
     .nav {
         display: none;
         position: absolute;
-        top: 90px;
+        top: 60px;
         right: 0;
         background-color: #000;
         width: 100%;
@@ -591,6 +591,11 @@ footer {
   .hero-text h1 { font-size: clamp(2rem, 6vw, 4rem); }
   .hero-text .highlight { color: #00FF00; font-family: 'DotFont', monospace; }
   .hero-text .subtext { font-size: clamp(2rem, 4vw, 2.25rem); color: #ccc; margin-top: 0.5rem; }
+
+  @media (max-width: 768px) {
+    .hero-text h2 { font-size: clamp(0.75rem,3.25vw, 1.25rem); margin-bottom: 0.5rem; }
+    .hero-text .subtext { font-size: clamp(1.25rem, 3.25vw, 1.75rem); color: #ccc; margin-top: 0.5rem; }
+  } 
 
 /* ───────────────── Experience / Timeline ───────────────── */
 .experience { 
@@ -760,3 +765,133 @@ footer {
     border-radius: 1rem;
   }
   
+
+
+/* Final unified project layout */
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 6rem;
+  position: relative;
+}
+
+.project.reverse .project-image {
+  order: 2;
+}
+
+.project.reverse .project-content {
+  order: 1;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+}
+
+.project-content {
+  max-width: 520px;
+  z-index: 1;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.project-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #00FFCC;
+  margin-bottom: 0.4rem;
+}
+
+.project-title {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.project-desc {
+  background: #111;
+  color: #bbb;
+  font-size: 0.95rem;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.project-tech {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+  color: #bbb;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.project-links a {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-right: 1rem;
+  transition: color 0.25s;
+}
+
+.project-links a:hover {
+  color: #00FFCC;
+}
+
+/* Mobile overlay layout */
+@media (max-width: 768px) {
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 3.5rem;
+    height: 400px;
+    padding: 1rem;
+  }
+
+  .project-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px) brightness(0.5);
+  }
+
+  .project-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 8px;
+    text-align: center;
+    max-width: 700px;
+  }
+
+  .project.reverse .project-content {
+    text-align: center;
+  }
+
+  .project-tech {
+    justify-content: center;
+  }
+}
+
