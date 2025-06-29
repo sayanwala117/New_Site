@@ -21,9 +21,9 @@ window.addEventListener('load', () => {
       'A Computer Science Student',
       'Tech enthusiast & Tinkerer'
     ],
-    typeSpeed: 60,      // typing speed (ms per char)
-    backSpeed: 40,      // backspace speed
-    backDelay: 1500,    // pause before deleting
+    typeSpeed: 90,      // typing speed (ms per char)
+    backSpeed: 30,      // backspace speed
+    backDelay: 1700,    // pause before deleting
     loop: true          // repeat forever
   });
   
